@@ -1,15 +1,9 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
-
-// const inter = Inter({ subsets: ['latin'] })
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const apiKey = process.env.OMDB_API_KEY;
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -17,7 +11,7 @@ export default function Home() {
   }, [searchTerm]);
 
   const getInfo = () => {
-    if (searchTerm.trim() === '') {
+    if (searchTerm.trim() === "") {
       // Если поле ввода пустое, не делать запрос
       setFilms([]);
     } else {
